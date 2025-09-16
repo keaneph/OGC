@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cookies } from "next/headers"
-import { SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar"
+import { SidebarProvider} from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 
 export const metadata: Metadata = {
