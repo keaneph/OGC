@@ -1,14 +1,14 @@
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import Image from "next/image"
+import logo from "@/public/images/logo.png"
 
 export function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div className="flex min-h-screen">
       
-      <div className="hidden md:block md:w-1/3 h-screen bg-cover bg-center" 
-        style={{ backgroundImage: "url('/login-img.jpg')" }}>
+      <div className="hidden md:block md:w-1/2 h-screen bg-cover bg-center" 
+        style={{ backgroundImage: "url('/images/login-img-2.png')" }}>
       </div>
 
      
@@ -16,8 +16,8 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
         <div className="mx-auto w-full max-w-md space-y-6">
          
           <div className="text-center">
-            <img
-              src="/logo.png"
+            <Image
+              src={logo}
               alt="MSU-IIT OGC"
               className="mx-auto h-12 w-auto"
             />

@@ -14,8 +14,6 @@ import {
     KeyboardDoubleArrowRightSharp as KeyboardDoubleArrowRightSharpIcon,
 } from '@mui/icons-material';
 
-import { cn } from "@/lib/utils"
-
 import {
   Sidebar,
   SidebarContent,
@@ -25,7 +23,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarTrigger,
   SidebarSeparator,
   useSidebar,
 } from "@/components/ui/sidebar"
