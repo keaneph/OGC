@@ -10,7 +10,11 @@ import {
     Diversity3Sharp as Diversity3SharpIcon,
     FestivalSharp as FestivalSharpIcon,
     SettingsSharp as SettingsSharpIcon,
+    KeyboardDoubleArrowLeftSharp as KeyboardDoubleArrowLeftSharpIcon,
+    KeyboardDoubleArrowRightSharp as KeyboardDoubleArrowRightSharpIcon,
 } from '@mui/icons-material';
+
+import { cn } from "@/lib/utils"
 
 import {
   Sidebar,
@@ -22,6 +26,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
+  SidebarSeparator,
+  useSidebar,
 } from "@/components/ui/sidebar"
  
 // Menu items.
@@ -64,11 +70,13 @@ const items = [
 ]
  
 export function AppSidebar() {
+  const { open } = useSidebar()
+   const { toggleSidebar } = useSidebar()
   return (
         <Sidebar collapsible='icon'> {/* sidebar component used to render a collapsible sidebar. remove if 
         we don't want a collapsible sidebar.*/}
             <SidebarContent>
-                <SidebarGroup>
+              <SidebarGroup>
                 <SidebarGroupContent>
                     <SidebarMenu>
                     {items.map((item) => (
@@ -83,10 +91,19 @@ export function AppSidebar() {
                     ))}
                     </SidebarMenu>
                 </SidebarGroupContent>
-                </SidebarGroup>
+              </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
-                <SidebarTrigger/>
+              <SidebarSeparator />
+              <button
+                onClick={toggleSidebar}
+                className="flex w-full items-center justify-end pr-4 py-4 hover:bg-muted transition-colors">
+                {open ? (
+                  <KeyboardDoubleArrowLeftSharpIcon fontSize="small"/>
+                ) : (
+                  <KeyboardDoubleArrowRightSharpIcon fontSize="small" />
+                )}
+              </button>
             </SidebarFooter>
         </Sidebar>
   )

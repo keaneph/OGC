@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, VariantProps } from "class-variance-authority"
-import KeyboardDoubleArrowLeftSharpIcon from '@mui/icons-material/KeyboardDoubleArrowLeftSharp';
+import { PanelLeftIcon } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -27,9 +27,9 @@ import {
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
-const SIDEBAR_WIDTH = "12.313rem"
+const SIDEBAR_WIDTH = "12rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
-const SIDEBAR_WIDTH_ICON = "3rem"
+const SIDEBAR_WIDTH_ICON = "3.5rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 type SidebarContextProps = {
@@ -273,7 +273,7 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <KeyboardDoubleArrowLeftSharpIcon />
+      <PanelLeftIcon />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
@@ -348,7 +348,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col", className)}
       {...props}
     />
   )
@@ -362,7 +362,7 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("bg-sidebar-border mx-2 w-auto", className)}
+      className={cn("bg-sidebar-border w-auto", className)}
       {...props}
     />
   )
