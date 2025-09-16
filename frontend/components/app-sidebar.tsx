@@ -60,7 +60,8 @@ const items = [
  
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar> {/* sidebar component used to render a collapsible sidebar. remove if 
+    we don't want a collapsible sidebar.*/}
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
