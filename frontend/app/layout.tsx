@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cookies } from "next/headers"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 
 export const metadata: Metadata = {
@@ -19,11 +19,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
         <body>
-          <SidebarProvider defaultOpen={defaultOpen}> {/* provides the sidebar context. app
+          <SidebarProvider defaultOpen={defaultOpen} > {/* provides the sidebar context. app
           should always be wrapped in a SidebarProvider*/}
-              <AppSidebar /> {/* the actual sidebar component */}
-            <SidebarTrigger />
-            {children}
+             <AppSidebar/> {/* the actual sidebar component */}
+              {children}
           </SidebarProvider>
         </body>
     </html>

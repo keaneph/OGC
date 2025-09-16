@@ -1,3 +1,7 @@
+"use client"
+
+import * as React from "react"
+
 import {
     AutoAwesomeSharp as AutoAwesomeSharpIcon,
     InsertChartSharp as InsertChartSharpIcon,
@@ -13,10 +17,11 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
+  SidebarFooter,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar"
  
 // Menu items.
@@ -60,27 +65,29 @@ const items = [
  
 export function AppSidebar() {
   return (
-    <Sidebar> {/* sidebar component used to render a collapsible sidebar. remove if 
-    we don't want a collapsible sidebar.*/}
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+        <Sidebar collapsible='icon'> {/* sidebar component used to render a collapsible sidebar. remove if 
+        we don't want a collapsible sidebar.*/}
+            <SidebarContent>
+                <SidebarGroup>
+                <SidebarGroupContent>
+                    <SidebarMenu>
+                    {items.map((item) => (
+                        <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton asChild>
+                            <a href={item.url}>
+                            <item.icon />
+                            <span>{item.title}</span>
+                            </a>
+                        </SidebarMenuButton>
+                        </SidebarMenuItem>
+                    ))}
+                    </SidebarMenu>
+                </SidebarGroupContent>
+                </SidebarGroup>
+            </SidebarContent>
+            <SidebarFooter>
+                <SidebarTrigger/>
+            </SidebarFooter>
+        </Sidebar>
   )
 }
